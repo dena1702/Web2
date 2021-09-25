@@ -25,6 +25,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 $config['base_url'] = 'http://localhost/PUSTAKA-BOOKING/';
 
+
 /*
 |--------------------------------------------------------------------------
 | Index File
@@ -35,7 +36,7 @@ $config['base_url'] = 'http://localhost/PUSTAKA-BOOKING/';
 | variable so that it is blank.
 |
 */
-$config['index_page'] = 'index.php';
+$config['index_page'] = '';
 
 /*
 |--------------------------------------------------------------------------
