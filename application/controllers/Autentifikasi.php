@@ -1,4 +1,5 @@
 <?php
+
 class Autentifikasi extends CI_Controller
 {
  
@@ -33,8 +34,8 @@ class Autentifikasi extends CI_Controller
             $this->_login();
         }
     }
-
-
+    
+    
 private function _login()
     {
         $email = htmlspecialchars($this->input->post('email',
@@ -85,7 +86,7 @@ terdaftar!!</div>');
             redirect('autentifikasi');
         }
     }   
-
+    
 public function blok()
     {
         $this->load->view('autentifikasi/blok');
@@ -94,7 +95,7 @@ public function gagal()
     {
         $this->load->view('autentifikasi/gagal');
     }
-
+    
 public function registrasi()
     {
         if ($this->session->userdata('email')) {
@@ -111,7 +112,7 @@ public function registrasi()
         //yaitu jika format email tidak benar maka pesannya 'EmailTidak Benar!!'. jika email belum diisi,
         //maka pesannya adalah 'Email Belum diisi', dan jika emailyang diinput sudah dipakai user lain,
         //maka pesannya 'Email Sudah dipakai'
-
+        
         $this->form_validation->set_rules('email', 'Alamat Email',
 'required|trim|valid_email|is_unique[user.email]', [
 'valid_email' => 'Email Tidak Benar!!',
@@ -149,9 +150,9 @@ Password', 'required|trim|matches[password1]');
                 'is_active' => 0,
                 'tanggal_input' => time()
             ];
-
+ 
             $this->ModelUser->simpanData($data); //menggunakan model
-
+ 
             $this->session->set_flashdata('pesan', '<div
 class="alert alert-success alert-message" role="alert">Selamat!!
 akun member anda sudah dibuat. Silahkan Aktivasi Akun anda</div>');
